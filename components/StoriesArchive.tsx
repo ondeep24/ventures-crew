@@ -131,7 +131,7 @@ export function StoriesArchive() {
           </div>
 
           <p className="max-w-3xl text-2xl font-black leading-tight tracking-[-0.04em] md:text-4xl">
-            It wasn't perfect. It didn't need to be. By December 2020,
+            It wasn&apos;t perfect. It didn&apos;t need to be. By December 2020,
             Ventures Crew had a look, a space and a reason to keep going.
           </p>
         </div>
@@ -378,7 +378,7 @@ export function StoriesArchive() {
 
           <p className="mt-8 max-w-2xl text-sm leading-relaxed text-[var(--muted)] md:text-base">
             From a tent on the ground in 2020 to artists on stage in 2026.
-            The story isn't finished.
+            The story isn&apos;t finished.
           </p>
         </div>
       </div>
