@@ -38,14 +38,12 @@ export function Music() {
             connects the DJs, producers and sounds shaping the culture around us.
           </p>
 
-          <a
-            href="https://youtube.com/playlist?list=PLVRc0GPu5oKy3UCPxYuv0b5TBHtJQ7oGG&si=U19o1B7wjYcKi7Bw"
-            target="_blank"
-            rel="noreferrer"
+          <Link
+            href="/radio"
             className="mt-6 inline-flex border border-white px-5 py-4 text-[11px] font-black uppercase tracking-[0.12em] text-white transition-colors hover:bg-white hover:text-[var(--foreground)]"
           >
-            See the selected mix ↗
-          </a>
+            Explore Crew Radio ↗
+          </Link>
         </div>
       </div>
 
