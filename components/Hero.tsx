@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -64,6 +65,36 @@ export function Hero() {
         >
           View latest experience →
         </a>
+
+        <div className="border-t border-[var(--foreground)]/20 pt-5">
+          <div className="text-[10px] font-black uppercase tracking-[0.16em]">
+            New / Crew Radio
+          </div>
+          <Link
+            href="/radio"
+            className="group mt-4 flex items-center gap-4"
+          >
+            <Image
+              src="/images/radio/cr-001-cover.webp"
+              alt=""
+              width={1254}
+              height={1254}
+              sizes="88px"
+              className="h-[88px] w-[88px] shrink-0 object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+            />
+            <span className="min-w-0">
+              <span className="block text-[10px] font-black uppercase tracking-[0.14em] text-[var(--muted)]">
+                CR.001 / Amapiano
+              </span>
+              <span className="mt-2 block text-xl font-black leading-none tracking-[-0.05em]">
+                NEHTION WYDE
+              </span>
+              <span className="mt-2 block text-[10px] font-black uppercase tracking-[0.12em] underline decoration-transparent underline-offset-4 transition-colors group-hover:decoration-current">
+                Enter Crew Radio ↗
+              </span>
+            </span>
+          </Link>
+        </div>
       </div>
     </section>
   );
