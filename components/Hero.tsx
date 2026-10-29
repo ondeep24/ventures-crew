@@ -37,36 +37,7 @@ export function Hero() {
       </div>
 
       <div className="flex min-h-[420px] flex-col justify-between bg-[var(--acid)] px-6 py-12 md:px-12 md:py-16">
-        <div className="text-[11px] font-black uppercase tracking-[0.18em]">
-          Latest experience · Hey Crew
-        </div>
-
-        <div>
-          <div className="text-[clamp(5.5rem,24vw,13rem)] font-black leading-[0.75] tracking-[-0.08em] md:text-[clamp(6rem,9vw,9rem)]">
-            08
-            <br />
-            08
-          </div>
-
-          <h2 className="mt-8 text-3xl font-black tracking-[-0.04em]">
-            HEY CREW / 2026
-          </h2>
-
-          <p className="mt-2 text-xs leading-relaxed">
-            Mzobe&apos;s Guesthouse · Mkhambathini
-            <br />
-            12:00 — 01:00 · South Africa
-          </p>
-        </div>
-
-        <a
-          href="#archive-latest"
-          className="w-fit border border-[var(--foreground)] bg-transparent px-5 py-4 text-[11px] font-black uppercase tracking-[0.12em] text-[var(--foreground)] transition-colors hover:bg-[var(--foreground)] hover:text-white"
-        >
-          View latest experience →
-        </a>
-
-        <div className="border-t border-[var(--foreground)]/20 pt-5">
+        <div className="border-b border-[var(--foreground)]/20 pb-5">
           <div className="text-[10px] font-black uppercase tracking-[0.16em]">
             New / Crew Radio
           </div>
@@ -95,6 +66,35 @@ export function Hero() {
             </span>
           </Link>
         </div>
+
+        <div className="text-[11px] font-black uppercase tracking-[0.18em]">
+          Latest experience · Hey Crew
+        </div>
+
+        <div>
+          <div className="text-[clamp(5.5rem,24vw,13rem)] font-black leading-[0.75] tracking-[-0.08em] md:text-[clamp(6rem,9vw,9rem)]">
+            08
+            <br />
+            08
+          </div>
+
+          <h2 className="mt-8 text-3xl font-black tracking-[-0.04em]">
+            HEY CREW / 2026
+          </h2>
+
+          <p className="mt-2 text-xs leading-relaxed">
+            Mzobe&apos;s Guesthouse · Mkhambathini
+            <br />
+            12:00 — 01:00 · South Africa
+          </p>
+        </div>
+
+        <a
+          href="#archive-latest"
+          className="w-fit border border-[var(--foreground)] bg-transparent px-5 py-4 text-[11px] font-black uppercase tracking-[0.12em] text-[var(--foreground)] transition-colors hover:bg-[var(--foreground)] hover:text-white"
+        >
+          View latest experience →
+        </a>
       </div>
     </section>
   );
