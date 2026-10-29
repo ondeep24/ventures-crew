@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 const footerLinks = [
   { label: "Hey Crew", href: "#hey-crew" },
   { label: "Music", href: "#music" },
+  { label: "Crew Radio", href: "/radio" },
   { label: "Stories", href: "/stories" },
   { label: "Archive", href: "#archive" },
   { label: "Lifestyle", href: "#lifestyle" },

@@ -9,6 +9,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.venturescrew.com"),
   title: "Ventures Crew — Culture, Music & Experiences",
   description:
     "An independent South African culture platform built around music, people, experiences and the stories that happen between them.",

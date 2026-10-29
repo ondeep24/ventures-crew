@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function Music() {
   return (
@@ -96,6 +97,16 @@ export function Music() {
             </p>
           </div>
         </a>
+
+        <Link
+          href="/radio"
+          className="group mt-5 flex items-center justify-between border-t border-[var(--line)] pt-5 text-[10px] font-black uppercase tracking-[0.14em]"
+        >
+          <span>Enter Crew Radio</span>
+          <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
+            ↗
+          </span>
+        </Link>
       </div>
     </section>
   );
