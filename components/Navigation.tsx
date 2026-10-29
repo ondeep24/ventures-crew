@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navigationItems = [
@@ -34,10 +35,20 @@ export function Navigation() {
           aria-label="Main navigation"
           className="flex items-center justify-between px-6 py-4 md:px-12"
         >
-          <Link href="/" className="text-xl font-black tracking-[-0.04em]">
-            VENTURES CREW
-            <span className="mt-1 block text-[9px] font-bold tracking-[0.22em]">
-              EST. 2020 · SOUTH AFRICA
+          <Link href="/" className="inline-flex items-center gap-3">
+            <Image
+              src="/images/brand/vc-mark.png"
+              alt=""
+              width={52}
+              height={29}
+              sizes="52px"
+              priority
+            />
+            <span className="text-xl font-black tracking-[-0.04em]">
+              VENTURES CREW
+              <span className="mt-1 block text-[9px] font-bold tracking-[0.22em]">
+                EST. 2020 · SOUTH AFRICA
+              </span>
             </span>
           </Link>
 

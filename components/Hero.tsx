@@ -1,9 +1,21 @@
+import Image from "next/image";
+
 export function Hero() {
   return (
     <section className="grid min-h-[78vh] scroll-mt-24 border-b border-[var(--line)] lg:grid-cols-[1.25fr_.75fr]">
       <div className="relative flex min-h-[65vh] flex-col justify-between overflow-hidden bg-[var(--dark)] px-6 py-16 text-white md:px-12 md:py-20 xl:py-28">
-        <div className="relative z-10 text-[11px] font-black uppercase tracking-[0.2em]">
-          Culture · Music · Experiences
+        <div className="relative z-10 flex items-center justify-between gap-5">
+          <span className="text-[11px] font-black uppercase tracking-[0.2em]">
+            Culture · Music · Experiences
+          </span>
+          <Image
+            src="/images/brand/vc-mark-outline.png"
+            alt=""
+            width={56}
+            height={31}
+            sizes="56px"
+            className="brightness-0 invert"
+          />
         </div>
 
         <h1 className="relative z-10 max-w-5xl text-[clamp(2.4rem,11.8vw,7.5rem)] font-black leading-[0.78] tracking-[-0.085em] lg:text-[clamp(4rem,7vw,7rem)]">
