@@ -4,7 +4,7 @@ import { useState } from "react";
 
 type SessionPlayerProps = {
   title: string;
-  youtubeVideoId: string;
+  youtubeVideoId?: string;
   hearthisEmbedUrl?: string;
   hearthisEmbedHeight?: number;
   hearthisUrl: string;
@@ -30,7 +30,7 @@ export function SessionPlayer({
   hearthisEmbedHeight = 150,
   hearthisUrl,
 }: SessionPlayerProps) {
-  const safeYoutubeVideoId = /^[A-Za-z0-9_-]{11}$/.test(youtubeVideoId)
+  const safeYoutubeVideoId = youtubeVideoId && /^[A-Za-z0-9_-]{11}$/.test(youtubeVideoId)
     ? youtubeVideoId
     : undefined;
   const audioEmbedUrl = hearthisEmbedUrl && isApprovedHearthisEmbedUrl(hearthisEmbedUrl)
@@ -48,28 +48,39 @@ export function SessionPlayer({
           Session player
         </div>
         {audioEmbedUrl ? (
-          <div
-            role="group"
-            aria-label="Choose how to play this session"
-            className="flex gap-2"
-          >
-            <button
-              type="button"
-              aria-pressed={mode === "listen"}
-              onClick={() => setMode("listen")}
-              className={`rounded-full border px-4 py-2 text-[10px] font-black uppercase tracking-[0.12em] transition-colors ${mode === "listen" ? "border-[var(--foreground)] bg-[var(--foreground)] text-white" : "border-[var(--line)] hover:border-[var(--foreground)]"}`}
+          safeYoutubeVideoId ? (
+            <div
+              role="group"
+              aria-label="Choose how to play this session"
+              className="flex gap-2"
             >
-              Listen
-            </button>
-            <button
-              type="button"
-              aria-pressed={mode === "watch"}
-              onClick={() => setMode("watch")}
-              className={`rounded-full border px-4 py-2 text-[10px] font-black uppercase tracking-[0.12em] transition-colors ${mode === "watch" ? "border-[var(--foreground)] bg-[var(--foreground)] text-white" : "border-[var(--line)] hover:border-[var(--foreground)]"}`}
+              <button
+                type="button"
+                aria-pressed={mode === "listen"}
+                onClick={() => setMode("listen")}
+                className={`rounded-full border px-4 py-2 text-[10px] font-black uppercase tracking-[0.12em] transition-colors ${mode === "listen" ? "border-[var(--foreground)] bg-[var(--foreground)] text-white" : "border-[var(--line)] hover:border-[var(--foreground)]"}`}
+              >
+                Listen
+              </button>
+              <button
+                type="button"
+                aria-pressed={mode === "watch"}
+                onClick={() => setMode("watch")}
+                className={`rounded-full border px-4 py-2 text-[10px] font-black uppercase tracking-[0.12em] transition-colors ${mode === "watch" ? "border-[var(--foreground)] bg-[var(--foreground)] text-white" : "border-[var(--line)] hover:border-[var(--foreground)]"}`}
+              >
+                Watch
+              </button>
+            </div>
+          ) : (
+            <a
+              href={hearthisUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="nav-link text-[10px] font-black uppercase tracking-[0.12em]"
             >
-              Watch
-            </button>
-          </div>
+              Open on Hearthis ↗
+            </a>
+          )
         ) : (
           <a
             href={hearthisUrl}
@@ -91,6 +102,7 @@ export function SessionPlayer({
           height={audioEmbedHeight}
           className="w-full rounded-[10px] border-0"
           style={{ height: audioEmbedHeight }}
+          allow="autoplay; web-share; clipboard-write"
         />
       ) : (
         safeYoutubeVideoId ? (

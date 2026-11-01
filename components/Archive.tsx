@@ -70,13 +70,13 @@ export function Archive() {
             view as the story continues.
           </p>
 
-          <nav aria-label="Archive years" className="mt-12 border-t border-[var(--line)]">
+          <ol aria-label="Established archive years" className="mt-12 border-t border-[var(--line)]">
             {archiveYears.map((year, index) => {
               const target = archiveYearTargets[year];
               const className = `font-black tracking-[-0.05em] transition-colors hover:text-[var(--muted)] ${index === 0 ? "text-4xl" : "text-2xl"}`;
 
               return (
-                <div
+                <li
                   key={year}
                   className="flex items-center justify-between border-b border-[var(--line)] py-3"
                 >
@@ -85,7 +85,7 @@ export function Archive() {
                       {year}
                     </a>
                   ) : (
-                    <span className={`${className} cursor-default`}>
+                    <span className={className}>
                       {year}
                     </span>
                   )}
@@ -94,10 +94,10 @@ export function Archive() {
                       Latest chapter
                     </span>
                   )}
-                </div>
+                </li>
               );
             })}
-          </nav>
+          </ol>
 
           <div className="mt-5 text-[10px] font-bold uppercase tracking-[0.12em] text-[var(--muted)]">
             Confirmed years · South Africa

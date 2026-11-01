@@ -64,7 +64,7 @@ export default async function RadioSessionPage({ params }: RadioSessionPageProps
             <div className="aspect-square overflow-hidden border border-[var(--line)] bg-[var(--cream)]">
               <SessionArtwork
                 src={session.artwork}
-                alt={`Crew Radio ${session.id} cover: ${session.genre} mix by ${session.artist}`}
+                alt={`Crew Radio ${session.id} cover artwork by ${session.artist}: ${session.title}`}
                 sizes="(min-width: 768px) 42vw, 100vw"
               />
             </div>
@@ -72,6 +72,11 @@ export default async function RadioSessionPage({ params }: RadioSessionPageProps
               <p className="text-[10px] font-black uppercase tracking-[0.16em] text-[var(--muted)]">
                 {session.id} / {session.genre} · {session.year}
               </p>
+              {session.context && (
+                <p className="mt-3 text-[10px] font-black uppercase tracking-[0.14em] text-[var(--muted)]">
+                  {session.context}
+                </p>
+              )}
               <h1 className="mt-5 text-[clamp(3.5rem,9vw,8rem)] font-black leading-[0.8] tracking-[-0.08em]">
                 {session.artist}.
               </h1>

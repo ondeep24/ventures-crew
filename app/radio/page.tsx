@@ -71,7 +71,7 @@ export default function RadioPage() {
                   <div className="aspect-square overflow-hidden">
                     <SessionArtwork
                       src={session.artwork}
-                      alt={`Crew Radio ${session.id} cover: ${session.genre} mix by ${session.artist}`}
+                      alt={`Crew Radio ${session.id} cover artwork by ${session.artist}: ${session.title}`}
                       sizes="(min-width: 768px) 50vw, 100vw"
                       className="transition-transform duration-500 group-hover:scale-[1.025] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                     />
@@ -85,6 +85,11 @@ export default function RadioPage() {
                         {session.artist}
                       </h3>
                       <p className="mt-1 text-sm text-[var(--muted)]">{session.title}</p>
+                      {session.context && (
+                        <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.1em] text-[var(--muted)]">
+                          {session.context}
+                        </p>
+                      )}
                     </div>
                     <span className="text-[10px] font-black uppercase tracking-[0.12em] transition-transform group-hover:translate-x-1">
                       Enter session ↗

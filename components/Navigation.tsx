@@ -52,12 +52,13 @@ export function Navigation() {
             </span>
           </Link>
 
-          <div className="hidden items-center gap-5 text-[10px] font-black uppercase tracking-[0.1em] lg:flex xl:gap-6 xl:text-[11px]">
+          <div className="hidden items-center gap-5 text-[10px] font-black uppercase tracking-[0.1em] xl:flex xl:gap-6 xl:text-[11px]">
             {navigationItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href.startsWith("#") && pathname !== "/" ? `/${item.href}` : item.href}
-                className="nav-link py-2"
+                aria-current={pathname === item.href ? "page" : undefined}
+                className={`nav-link py-2 ${pathname === item.href ? "underline decoration-current" : ""}`}
               >
                 {item.label}
               </Link>
@@ -77,7 +78,7 @@ export function Navigation() {
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
             onClick={() => setMenuOpen((isOpen) => !isOpen)}
-            className="inline-flex min-h-11 items-center gap-2 text-[11px] font-black uppercase tracking-[0.1em] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--blue)] lg:hidden"
+            className="inline-flex min-h-11 items-center gap-2 text-[11px] font-black uppercase tracking-[0.1em] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--blue)] xl:hidden"
           >
             {menuOpen ? "Close" : "Menu"}
             <span aria-hidden="true" className="text-lg leading-none">
@@ -96,14 +97,15 @@ export function Navigation() {
               menuButtonRef.current?.focus();
             }
           }}
-          className="border-t border-[var(--line)] bg-[var(--background)] px-6 py-3 lg:hidden"
+          className="border-t border-[var(--line)] bg-[var(--background)] px-6 py-3 xl:hidden"
         >
           {navigationItems.map((item, index) => (
             <Link
               key={item.href}
               href={item.href.startsWith("#") && pathname !== "/" ? `/${item.href}` : item.href}
               onClick={() => setMenuOpen(false)}
-              className="flex items-center justify-between border-b border-[var(--line)] py-3 text-lg font-black tracking-[-0.04em]"
+              aria-current={pathname === item.href ? "page" : undefined}
+              className={`flex items-center justify-between border-b border-[var(--line)] py-3 text-lg font-black tracking-[-0.04em] ${pathname === item.href ? "text-[var(--muted)]" : ""}`}
             >
               <span>{item.label}</span>
               <span className="text-[10px] font-bold tracking-[0.12em] text-[var(--muted)]">
@@ -114,7 +116,7 @@ export function Navigation() {
           <Link
             href={latestEventHref}
             onClick={() => setMenuOpen(false)}
-            className="mt-4 inline-flex bg-[var(--foreground)] px-5 py-3 text-[10px] font-black uppercase tracking-[0.12em] text-white"
+            className="mt-4 inline-flex border border-[var(--foreground)] bg-transparent px-5 py-3 text-[10px] font-black uppercase tracking-[0.12em] text-[var(--foreground)] transition-colors hover:bg-[var(--foreground)] hover:text-white"
           >
             View latest event ↗
           </Link>

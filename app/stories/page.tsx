@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Stories — Ventures Crew",
   description:
     "The people, places and chapters behind Ventures Crew, from the first tent to the present day.",
+  alternates: { canonical: "/stories" },
 };
 
 export default function StoriesPage() {

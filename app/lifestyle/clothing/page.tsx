@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Ventures Crew Clothing — Coming Soon",
   description:
     "A first look at the Ventures Crew clothing brand. Oversized T-shirt designs are coming soon.",
+  alternates: { canonical: "/lifestyle/clothing" },
 };
 
 const designs = [

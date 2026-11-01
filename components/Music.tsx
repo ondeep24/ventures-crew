@@ -62,9 +62,9 @@ export function Music() {
         </h3>
 
         <p className="mt-8 max-w-xl text-sm leading-relaxed text-[var(--muted)] md:text-base">
-          WASEMBO becomes the artist and DJ layer of the wider Ventures
-          ecosystem, while Ventures Sessions can eventually host guest mixes
-          and collaborations.
+          WASEMBO leads the artist and DJ side of Ventures Crew. Crew Radio
+          opens the frequency to guest mixes and collaborations, with Ventures
+          Sessions creating room for what comes next.
         </p>
 
         {/* Featured mix */}

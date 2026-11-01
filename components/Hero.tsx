@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getPublicRadioSessions } from "@/lib/radio/sessions";
 
 export function Hero() {
+  const latestSession = getPublicRadioSessions()[0];
+
   return (
     <section className="grid min-h-[78vh] scroll-mt-24 border-b border-[var(--line)] lg:grid-cols-[1.25fr_.75fr]">
       <div className="relative flex min-h-[65vh] flex-col justify-between overflow-hidden bg-[var(--dark)] px-6 py-16 text-white md:px-12 md:py-20 xl:py-28">
@@ -41,30 +44,32 @@ export function Hero() {
           <div className="text-[10px] font-black uppercase tracking-[0.16em]">
             New / Crew Radio
           </div>
-          <Link
-            href="/radio"
-            className="group mt-4 flex items-center gap-4"
-          >
-            <Image
-              src="/images/radio/cr-001-cover.webp"
-              alt=""
-              width={1254}
-              height={1254}
-              sizes="88px"
-              className="h-[88px] w-[88px] shrink-0 object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-            />
-            <span className="min-w-0">
-              <span className="block text-[10px] font-black uppercase tracking-[0.14em] text-[var(--muted)]">
-                CR.001 / Amapiano
+          {latestSession && (
+            <Link
+              href={`/radio/${latestSession.slug}`}
+              className="group mt-4 flex items-center gap-4"
+            >
+              <Image
+                src={latestSession.artwork}
+                alt={`Cover artwork for ${latestSession.id} by ${latestSession.artist}`}
+                width={1254}
+                height={1254}
+                sizes="88px"
+                className="h-[88px] w-[88px] shrink-0 object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+              />
+              <span className="min-w-0">
+                <span className="block text-[10px] font-black uppercase tracking-[0.14em] text-[var(--muted)]">
+                  {latestSession.id} / {latestSession.genre}
+                </span>
+                <span className="mt-2 block text-xl font-black leading-none tracking-[-0.05em]">
+                  {latestSession.artist}
+                </span>
+                <span className="mt-2 block text-[10px] font-black uppercase tracking-[0.12em] underline decoration-transparent underline-offset-4 transition-colors group-hover:decoration-current">
+                  Play latest mix ↗
+                </span>
               </span>
-              <span className="mt-2 block text-xl font-black leading-none tracking-[-0.05em]">
-                NEHTION WYDE
-              </span>
-              <span className="mt-2 block text-[10px] font-black uppercase tracking-[0.12em] underline decoration-transparent underline-offset-4 transition-colors group-hover:decoration-current">
-                Enter Crew Radio ↗
-              </span>
-            </span>
-          </Link>
+            </Link>
+          )}
         </div>
 
         <div className="text-[11px] font-black uppercase tracking-[0.18em]">
