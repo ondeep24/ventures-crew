@@ -18,6 +18,25 @@ export type RadioSession = {
 
 export const radioSessions: RadioSession[] = [
   {
+    id: "CR.003",
+    slug: "wasembo-deep-house-playlist",
+    title: "Deep House Playlist",
+    artist: "WASEMBO",
+    genre: "Deep House",
+    year: 2026,
+    description:
+      "A Sunday mix from WASEMBO, built around a deep house selection for Crew Radio 003.",
+    context: "Sunday mix · Crew Radio",
+    artwork: "/images/radio/cr-003-cover.webp",
+    youtubeVideoId: "jwKDmkdCoPg",
+    hearthisUrl: "https://hearthis.at/venturescrew/wasembo-crew-radio-003/",
+    hearthisEmbedUrl:
+      "https://app.hearthis.at/embed/14757059/transparent_black/?style=2&block_size=2&block_space=1&background=1&waveform=0&cover=0",
+    hearthisEmbedHeight: 150,
+    status: "published",
+    rightsStatus: "cleared",
+  },
+  {
     id: "CR.002",
     slug: "wasembo-hey-crew-2026-mix",
     title: "Hey Crew 2026 Mix",
