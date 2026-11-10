@@ -36,7 +36,10 @@ export function Hero() {
           happen between them.
         </p>
 
-        <div className="absolute -bottom-32 -right-32 h-[45vw] w-[45vw] rounded-full bg-[var(--acid)]" />
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-32 -right-32 h-[45vw] w-[45vw] rounded-full bg-[var(--acid)] md:-bottom-20 md:-right-20 md:h-48 md:w-48"
+        />
       </div>
 
       <div className="flex min-h-[420px] flex-col justify-between bg-[var(--acid)] px-6 py-12 md:px-12 md:py-16">

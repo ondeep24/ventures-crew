@@ -41,10 +41,10 @@ export default function RadioPage() {
               </h1>
             </div>
             <div className="md:pb-2">
-              <p className="max-w-xl text-lg font-bold leading-snug tracking-[-0.03em] md:text-2xl">
+              <p className="editorial-copy max-w-xl text-2xl leading-snug md:text-3xl">
                 Selected sounds. Distinctive artists. One collective frequency.
               </p>
-              <p className="mt-5 max-w-lg text-sm leading-relaxed text-[var(--muted)] md:text-base">
+              <p className="editorial-copy mt-5 max-w-lg text-lg leading-relaxed text-[var(--muted)] md:text-xl">
                 A growing archive of mixes from the DJs shaping the sounds around
                 Ventures Crew. Each session is made to be returned to.
               </p>
@@ -61,7 +61,7 @@ export default function RadioPage() {
           </div>
 
           {sessions.length > 0 ? (
-            <div className="grid gap-5 pt-5 md:grid-cols-2">
+            <div className="grid gap-5 pt-5 md:grid-cols-2 xl:grid-cols-3">
               {sessions.map((session) => (
                 <Link
                   key={session.id}
@@ -72,7 +72,7 @@ export default function RadioPage() {
                     <SessionArtwork
                       src={session.artwork}
                       alt={`Crew Radio ${session.id} cover artwork by ${session.artist}: ${session.title}`}
-                      sizes="(min-width: 768px) 50vw, 100vw"
+                      sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
                       className="transition-transform duration-500 group-hover:scale-[1.025] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                     />
                   </div>

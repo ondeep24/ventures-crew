@@ -1,5 +1,15 @@
 import Image from "next/image";
 
+const storyChapters = [
+  { number: "01", label: "The beginning", href: "#story-the-beginning" },
+  { number: "02", label: "The first look", href: "#story-the-first-look" },
+  { number: "03", label: "Late nights", href: "#story-late-nights" },
+  { number: "04", label: "The crowd", href: "#story-the-crowd" },
+  { number: "05", label: "Starting again", href: "#story-starting-again" },
+  { number: "06", label: "The crew", href: "#story-the-crew" },
+  { number: "07", label: "The evolution", href: "#story-the-evolution" },
+];
+
 export function StoriesArchive() {
   return (
     <section
@@ -7,22 +17,43 @@ export function StoriesArchive() {
       className="border-b border-[var(--line)] px-6 py-20 md:px-12 md:py-28"
     >
       {/* Header */}
-      <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+      <div className="mb-10 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
         <div>
           <div className="text-[10px] font-black uppercase tracking-[0.18em] text-[var(--muted)]">
             03 / Editorial
           </div>
 
-          <h2 className="mt-3 text-[clamp(4rem,15vw,9rem)] font-black leading-[0.8] tracking-[-0.07em] md:text-[clamp(5rem,7.5vw,8.5rem)]">
+          <h1 className="mt-3 text-[clamp(4rem,15vw,9rem)] font-black leading-[0.8] tracking-[-0.07em] md:text-[clamp(5rem,7.5vw,8.5rem)]">
             STORIES
-          </h2>
+          </h1>
         </div>
 
-        <p className="max-w-sm text-sm leading-relaxed text-[var(--muted)] md:text-right">
+        <p className="editorial-copy max-w-sm text-lg leading-relaxed text-[var(--muted)] md:text-right md:text-xl">
           Before the lights, the crowds and the artists, there was a tent
           lying on the ground and a group of people trying to figure it out.
         </p>
       </div>
+
+      <nav aria-label="Story chapters" className="mb-16 overflow-x-auto border-y border-[var(--line)]">
+        <ol className="flex min-w-max divide-x divide-[var(--line)]">
+          {storyChapters.map((chapter) => (
+            <li key={chapter.number}>
+              <a
+                href={chapter.href}
+                className="group flex min-h-16 items-center gap-3 px-4 transition-colors hover:bg-[var(--acid)]/40 sm:px-5"
+              >
+                <span className="text-[9px] font-black uppercase tracking-[0.12em] text-[var(--muted)]">
+                  {chapter.number}
+                </span>
+                <span className="editorial-copy text-base transition-colors group-hover:text-[var(--foreground)] sm:text-lg">
+                  {chapter.label}
+                </span>
+                <span aria-hidden="true" className="text-xs text-[var(--muted)]">↘</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
 
       {/* THE BEGINNING */}
       <div id="story-the-beginning" className="scroll-mt-24 border-t border-[var(--line)] pt-6">
@@ -32,9 +63,9 @@ export function StoriesArchive() {
               2020 / Chapter 01
             </div>
 
-            <h3 className="mt-2 text-4xl font-black tracking-[-0.05em] md:text-6xl">
+            <h2 className="mt-2 text-4xl font-black tracking-[-0.05em] md:text-6xl">
               THE BEGINNING.
-            </h3>
+            </h2>
           </div>
 
           <div className="hidden text-[10px] font-black uppercase tracking-[0.16em] text-[var(--muted)] md:block">
@@ -59,7 +90,7 @@ export function StoriesArchive() {
               It started here.
             </div>
 
-            <p className="mt-6 text-lg font-black leading-tight tracking-[-0.03em] md:text-2xl">
+            <p className="editorial-copy mt-6 text-xl leading-snug md:text-2xl">
               A tent on the ground. A venue waiting to become something.
             </p>
 
@@ -81,7 +112,7 @@ export function StoriesArchive() {
           />
 
           <div className="flex items-end border border-[var(--line)] p-6 md:p-8">
-            <p className="max-w-lg text-2xl font-black leading-tight tracking-[-0.04em] md:text-4xl">
+            <p className="editorial-copy max-w-lg text-3xl leading-tight md:text-4xl">
               Before we knew what it would become, we were just trying to work
               out how to put the thing up.
             </p>
@@ -90,15 +121,15 @@ export function StoriesArchive() {
       </div>
 
       {/* THE FIRST LOOK */}
-      <div className="scroll-mt-24 mt-24 border-t border-[var(--line)] pt-6">
+      <div id="story-the-first-look" className="scroll-mt-24 mt-24 border-t border-[var(--line)] pt-6">
         <div className="mb-8">
           <div className="text-[10px] font-black uppercase tracking-[0.16em] text-[var(--muted)]">
             December 2020 / Chapter 02
           </div>
 
-          <h3 className="mt-2 text-4xl font-black tracking-[-0.05em] md:text-6xl">
+          <h2 className="mt-2 text-4xl font-black tracking-[-0.05em] md:text-6xl">
             THE FIRST LOOK.
-          </h3>
+          </h2>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2">
@@ -130,7 +161,7 @@ export function StoriesArchive() {
             Official look / 2020
           </div>
 
-          <p className="max-w-3xl text-2xl font-black leading-tight tracking-[-0.04em] md:text-4xl">
+          <p className="editorial-copy max-w-3xl text-3xl leading-tight md:text-4xl">
             It wasn&apos;t perfect. It didn&apos;t need to be. By December 2020,
             Ventures Crew had a look, a space and a reason to keep going.
           </p>
@@ -138,16 +169,16 @@ export function StoriesArchive() {
       </div>
 
       {/* LATE NIGHTS */}
-      <div className="scroll-mt-24 mt-24 border-t border-[var(--line)] pt-6">
+      <div id="story-late-nights" className="scroll-mt-24 mt-24 border-t border-[var(--line)] pt-6">
         <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <div className="text-[10px] font-black uppercase tracking-[0.16em] text-[var(--muted)]">
               2020 / Chapter 03
             </div>
 
-            <h3 className="mt-2 text-4xl font-black tracking-[-0.05em] md:text-6xl">
+            <h2 className="mt-2 text-4xl font-black tracking-[-0.05em] md:text-6xl">
               LATE NIGHTS.
-            </h3>
+            </h2>
           </div>
 
           <p className="max-w-md text-sm leading-relaxed text-[var(--muted)] md:text-right">
@@ -170,7 +201,7 @@ export function StoriesArchive() {
               The early days
             </div>
 
-            <p className="mt-4 text-2xl font-black leading-tight tracking-[-0.04em] md:text-4xl">
+            <p className="editorial-copy mt-4 text-3xl leading-tight md:text-5xl">
               Cute. A little sad. Completely ours.
             </p>
           </div>
@@ -184,9 +215,9 @@ export function StoriesArchive() {
             2024 / Chapter 04
           </div>
 
-          <h3 className="mt-2 text-4xl font-black tracking-[-0.05em] md:text-6xl">
+          <h2 className="mt-2 text-4xl font-black tracking-[-0.05em] md:text-6xl">
             THE CROWD.
-          </h3>
+          </h2>
         </div>
 
         <div className="grid gap-4 md:grid-cols-[1.6fr_.4fr]">
@@ -214,7 +245,7 @@ export function StoriesArchive() {
         </div>
 
         <div className="mt-6 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <p className="max-w-3xl text-2xl font-black leading-tight tracking-[-0.04em] md:text-4xl">
+          <p className="editorial-copy max-w-3xl text-3xl leading-tight md:text-4xl">
             Then the room got bigger. The crowd got bigger. The idea started
             becoming real.
           </p>
@@ -226,20 +257,20 @@ export function StoriesArchive() {
       </div>
 
       {/* STARTING AGAIN */}
-      <div className="scroll-mt-24 mt-24 border-t border-[var(--line)] pt-6">
+      <div id="story-starting-again" className="scroll-mt-24 mt-24 border-t border-[var(--line)] pt-6">
         <div className="mb-8">
           <div className="text-[10px] font-black uppercase tracking-[0.16em] text-[var(--muted)]">
             Mzobe&apos;s / Chapter 05
           </div>
 
-          <h3 className="mt-2 text-4xl font-black tracking-[-0.05em] md:text-6xl">
+          <h2 className="mt-2 text-4xl font-black tracking-[-0.05em] md:text-6xl">
             STARTING AGAIN.
-          </h3>
+          </h2>
         </div>
 
         <div className="grid gap-8 md:grid-cols-[.75fr_1.25fr] md:items-center">
           <div>
-            <p className="text-2xl font-black leading-tight tracking-[-0.04em] md:text-4xl">
+            <p className="editorial-copy text-3xl leading-tight md:text-5xl">
               Sometimes you have to start with a table, a mixer and a pair of
               speakers.
             </p>
@@ -270,9 +301,9 @@ export function StoriesArchive() {
             The people / Chapter 06
           </div>
 
-          <h3 className="mt-2 text-4xl font-black tracking-[-0.05em] md:text-6xl">
+          <h2 className="mt-2 text-4xl font-black tracking-[-0.05em] md:text-6xl">
             THE CREW.
-          </h3>
+          </h2>
         </div>
 
         <div className="grid gap-6 md:grid-cols-[1.2fr_.8fr]">
@@ -288,7 +319,7 @@ export function StoriesArchive() {
           </div>
 
           <div className="flex flex-col justify-between">
-            <p className="text-3xl font-black leading-[0.95] tracking-[-0.05em] md:text-5xl">
+            <p className="editorial-copy text-4xl leading-[0.98] md:text-6xl">
               The people behind the experience are the experience.
             </p>
 
@@ -313,9 +344,9 @@ export function StoriesArchive() {
               2025–2026 / Chapter 07
             </div>
 
-            <h3 className="mt-2 text-4xl font-black tracking-[-0.05em] md:text-6xl">
+            <h2 className="mt-2 text-4xl font-black tracking-[-0.05em] md:text-6xl">
               THE EVOLUTION.
-            </h3>
+            </h2>
           </div>
 
           <div className="text-[10px] font-black uppercase tracking-[0.16em] text-[var(--muted)]">

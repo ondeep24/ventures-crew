@@ -19,40 +19,20 @@ export function Join() {
       </div>
 
       <div className="flex flex-col justify-end px-6 py-20 md:px-12 md:py-24">
-        <p className="max-w-xl text-base leading-relaxed md:text-lg">
+        <p className="editorial-copy max-w-xl text-xl leading-relaxed md:text-2xl">
           First access to Hey Crew. New music. Limited drops. Private
           experiences. What&apos;s next.
         </p>
 
-        <div
-          role="group"
-          aria-label="Newsletter sign-up coming soon"
-          className="mt-12 flex border-b-2 border-[var(--foreground)]"
-        >
-          <label htmlFor="newsletter-email" className="sr-only">
-            Email address
-          </label>
-          <input
-            id="newsletter-email"
-            type="email"
-            placeholder="Your email address"
-            disabled
-            aria-describedby="newsletter-status"
-            className="min-w-0 flex-1 cursor-not-allowed bg-transparent py-4 text-base placeholder:text-[var(--foreground)]/60 disabled:opacity-100"
-          />
-
-          <button
-            type="button"
-            disabled
-            className="cursor-not-allowed px-2 py-4 text-[11px] font-black uppercase tracking-[0.12em] opacity-60"
-          >
-            Soon
-          </button>
+        <div className="mt-12 border-y-2 border-[var(--foreground)] py-4">
+          <div className="flex items-center justify-between gap-4 text-[10px] font-black uppercase tracking-[0.14em]">
+            <span>Newsletter</span>
+            <span>Sign-up coming soon</span>
+          </div>
+          <p className="editorial-copy mt-3 text-lg leading-relaxed md:text-xl">
+            No noise, just the good stuff. The mailing list is being prepared.
+          </p>
         </div>
-
-        <p id="newsletter-status" className="mt-4 text-[10px] font-bold uppercase tracking-[0.12em]">
-          Newsletter sign-up coming soon. No noise, just the good stuff.
-        </p>
       </div>
     </section>
   );

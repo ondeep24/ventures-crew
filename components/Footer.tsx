@@ -3,16 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-
-const footerLinks = [
-  { label: "Hey Crew", href: "#hey-crew" },
-  { label: "Music", href: "#music" },
-  { label: "Crew Radio", href: "/radio" },
-  { label: "Stories", href: "/stories" },
-  { label: "Archive", href: "#archive" },
-  { label: "Lifestyle", href: "#lifestyle" },
-  { label: "Join", href: "#join" },
-];
+import {
+  getNavigationHref,
+  isCurrentNavigationPage,
+  siteNavigationItems,
+} from "@/lib/site-navigation";
 
 export function Footer() {
   const pathname = usePathname();
@@ -42,15 +37,19 @@ export function Footer() {
         </div>
 
         <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-5 gap-y-3">
-          {footerLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href.startsWith("#") && pathname !== "/" ? `/${link.href}` : link.href}
-              className="nav-link text-[10px] font-black uppercase tracking-[0.12em]"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {siteNavigationItems.map((link) => {
+            const isCurrentPage = isCurrentNavigationPage(pathname, link.href);
+            return (
+              <Link
+                key={link.href}
+                href={getNavigationHref(link.href, pathname)}
+                aria-current={isCurrentPage ? "page" : undefined}
+                className={`nav-link text-[10px] font-black uppercase tracking-[0.12em] ${isCurrentPage ? "underline decoration-current" : ""}`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </footer>

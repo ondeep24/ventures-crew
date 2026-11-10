@@ -4,14 +4,14 @@ export function ArtistReleases() {
   return (
     <div className="px-6 py-20 md:px-12 md:py-24">
       <div className="text-[10px] font-black uppercase tracking-[0.18em] text-[var(--muted)]">
-        03 / Artist releases
+        Latest from the artists
       </div>
 
       <h3 className="mt-6 text-[clamp(3.25rem,11vw,6.5rem)] font-black leading-[0.8] tracking-[-0.07em]">
         NEW MUSIC.<br />NEW STORIES.
       </h3>
 
-      <p className="mt-8 max-w-xl text-sm leading-relaxed text-[var(--muted)] md:text-base">
+      <p className="editorial-copy mt-8 max-w-xl text-lg leading-relaxed text-[var(--muted)] md:text-xl">
         Releases from the artists around Ventures Crew, with a little more about
         the music and a direct path to listen.
       </p>
@@ -40,7 +40,7 @@ export function ArtistReleases() {
               <p className="text-[10px] font-black uppercase tracking-[0.14em] text-[var(--muted)]">
                 The release story
               </p>
-              <p className="mt-3 max-w-xl text-sm leading-relaxed text-[var(--muted)] md:text-base">
+              <p className="editorial-copy mt-3 max-w-xl text-base leading-relaxed text-[var(--muted)] md:text-lg">
                 {release.story}
               </p>
               <a

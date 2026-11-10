@@ -83,7 +83,7 @@ export default async function RadioSessionPage({ params }: RadioSessionPageProps
               <p className="mt-6 text-xl font-bold tracking-[-0.04em] md:text-2xl">
                 {session.title}
               </p>
-              <p className="mt-5 max-w-xl text-sm leading-relaxed text-[var(--muted)] md:text-base">
+              <p className="editorial-copy mt-5 max-w-xl text-lg leading-relaxed text-[var(--muted)] md:text-xl">
                 {session.description}
               </p>
               <p className="mt-8 border-l-2 border-[var(--orange)] pl-4 text-xs leading-relaxed text-[var(--muted)]">

@@ -30,15 +30,20 @@ export function SessionPlayer({
   hearthisEmbedHeight = 150,
   hearthisUrl,
 }: SessionPlayerProps) {
-  const safeYoutubeVideoId = youtubeVideoId && /^[A-Za-z0-9_-]{11}$/.test(youtubeVideoId)
-    ? youtubeVideoId
-    : undefined;
-  const audioEmbedUrl = hearthisEmbedUrl && isApprovedHearthisEmbedUrl(hearthisEmbedUrl)
-    ? hearthisEmbedUrl
-    : undefined;
-  const audioEmbedHeight = Number.isInteger(hearthisEmbedHeight) && hearthisEmbedHeight >= 100 && hearthisEmbedHeight <= 500
-    ? hearthisEmbedHeight
-    : 150;
+  const safeYoutubeVideoId =
+    youtubeVideoId && /^[A-Za-z0-9_-]{11}$/.test(youtubeVideoId)
+      ? youtubeVideoId
+      : undefined;
+  const audioEmbedUrl =
+    hearthisEmbedUrl && isApprovedHearthisEmbedUrl(hearthisEmbedUrl)
+      ? hearthisEmbedUrl
+      : undefined;
+  const audioEmbedHeight =
+    Number.isInteger(hearthisEmbedHeight) &&
+    hearthisEmbedHeight >= 100 &&
+    hearthisEmbedHeight <= 500
+      ? hearthisEmbedHeight
+      : 150;
   const [mode, setMode] = useState<"listen" | "watch">(audioEmbedUrl ? "listen" : "watch");
 
   return (

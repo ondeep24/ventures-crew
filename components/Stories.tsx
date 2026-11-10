@@ -22,7 +22,7 @@ export function Stories() {
           <h2 className="text-[clamp(4rem,15vw,9rem)] font-black leading-[0.78] tracking-[-0.07em]">
             STORIES
           </h2>
-          <p className="mt-7 max-w-md text-sm leading-relaxed text-[var(--muted)] md:text-base">
+          <p className="editorial-copy mt-7 max-w-md text-lg leading-relaxed text-[var(--muted)] md:text-xl">
             From the first tent to the people behind the experience: the
             moments and chapters that shaped Ventures Crew.
           </p>
