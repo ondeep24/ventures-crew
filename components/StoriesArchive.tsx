@@ -34,7 +34,7 @@ export function StoriesArchive() {
         </p>
       </div>
 
-      <nav aria-label="Story chapters" className="mb-16 overflow-x-auto border-y border-[var(--line)]">
+      <nav aria-label="Story chapters" className="scrollbar-hidden mb-16 overflow-x-auto border-y border-[var(--line)]">
         <ol className="flex min-w-max divide-x divide-[var(--line)]">
           {storyChapters.map((chapter) => (
             <li key={chapter.number}>
