@@ -1,9 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { useCrewRadioPlayer } from "@/components/radio/CrewRadioPlayerProvider";
 
 type SessionPlayerProps = {
   title: string;
+  id: string;
+  artist: string;
+  artwork: string;
   youtubeVideoId?: string;
   hearthisEmbedUrl?: string;
   hearthisEmbedHeight?: number;
@@ -25,11 +29,15 @@ function isApprovedHearthisEmbedUrl(value: string) {
 
 export function SessionPlayer({
   title,
+  id,
+  artist,
+  artwork,
   youtubeVideoId,
   hearthisEmbedUrl,
   hearthisEmbedHeight = 150,
   hearthisUrl,
 }: SessionPlayerProps) {
+  const { openPlayer } = useCrewRadioPlayer();
   const safeYoutubeVideoId =
     youtubeVideoId && /^[A-Za-z0-9_-]{11}$/.test(youtubeVideoId)
       ? youtubeVideoId
@@ -98,37 +106,30 @@ export function SessionPlayer({
         )}
       </div>
 
-      {mode === "listen" && audioEmbedUrl ? (
-        <iframe
-          key="hearthis-audio"
-          src={audioEmbedUrl}
-          title={`${title} audio player on hearthis.at`}
-          loading="lazy"
-          height={audioEmbedHeight}
-          className="w-full rounded-[10px] border-0"
-          style={{ height: audioEmbedHeight }}
-          allow="autoplay; web-share; clipboard-write"
-        />
-      ) : (
-        safeYoutubeVideoId ? (
-          <div className="aspect-video bg-[var(--dark)]">
-            <iframe
-              key="youtube-video"
-              src={`https://www.youtube-nocookie.com/embed/${safeYoutubeVideoId}`}
-              title={`${title} video on YouTube`}
-              loading="lazy"
-              className="h-full w-full border-0"
-              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
-          </div>
-        ) : (
-          <p className="px-5 py-8 text-sm text-[var(--muted)]">
-            This video player is unavailable. Try the Hearthis link instead.
-          </p>
-        )
-      )}
+      <div className="border-t border-[var(--line)] px-5 py-6 md:px-6">
+        <p className="editorial-copy max-w-2xl text-lg leading-relaxed text-[var(--muted)] md:text-xl">
+          Open the player and start the mix there. It stays with you as you browse the site.
+        </p>
+        <button
+          type="button"
+          onClick={() =>
+            openPlayer({
+              id,
+              title,
+              artist,
+              artwork,
+              hearthisEmbedUrl: audioEmbedUrl,
+              hearthisEmbedHeight: audioEmbedHeight,
+              hearthisUrl,
+              youtubeVideoId: safeYoutubeVideoId,
+              mode,
+            })
+          }
+          className="mt-5 inline-flex min-h-11 items-center gap-3 border border-[var(--foreground)] bg-transparent px-5 py-3 text-[10px] font-black uppercase tracking-[0.14em] transition-colors hover:bg-[var(--foreground)] hover:text-[var(--cream)]"
+        >
+          Open persistent player <span aria-hidden="true">↗</span>
+        </button>
+      </div>
     </div>
   );
 }

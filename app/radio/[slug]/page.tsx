@@ -93,7 +93,10 @@ export default async function RadioSessionPage({ params }: RadioSessionPageProps
           </div>
 
           <SessionPlayer
+            id={session.id}
             title={`${session.artist} — ${session.title}`}
+            artist={session.artist}
+            artwork={session.artwork}
             youtubeVideoId={session.youtubeVideoId}
             hearthisEmbedUrl={session.hearthisEmbedUrl}
             hearthisEmbedHeight={session.hearthisEmbedHeight}
