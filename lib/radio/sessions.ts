@@ -12,11 +12,44 @@ export type RadioSession = {
   hearthisUrl: string;
   hearthisEmbedUrl?: string;
   hearthisEmbedHeight?: number;
+  tracklist?: { time: string; title: string }[];
   status: "draft" | "published";
   rightsStatus: "pending" | "cleared";
 };
 
 export const radioSessions: RadioSession[] = [
+  {
+    id: "CR.004",
+    slug: "wasembo-deeper-with-house",
+    title: "Deeper with House",
+    artist: "WASEMBO",
+    genre: "Deep House",
+    year: 2026,
+    description:
+      "A deeper house selection from WASEMBO, made for Crew Radio 004.",
+    context: "Crew Radio · Independent mix series",
+    artwork: "/images/radio/cr-004-cover.webp",
+    youtubeVideoId: "y7cInW0ZF34",
+    hearthisUrl: "https://hearthis.at/venturescrew/wasembo-crew-radio-004/",
+    hearthisEmbedUrl:
+      "https://app.hearthis.at/embed/14766127/transparent_black/?style=2&block_size=2&block_space=1&background=1&waveform=0&cover=0",
+    hearthisEmbedHeight: 150,
+    tracklist: [
+      { time: "00:00:23", title: "Solid (feat. NtoMusica) — pM.Mp, K Soul" },
+      { time: "00:05:29", title: "De'Luks & Ricky R — Le Shandisi · Sound Category1" },
+      { time: "00:11:12", title: "Late Groove — Newlexim, Tukz Ancestral" },
+      { time: "00:16:08", title: "Non Stop — Louis Anima" },
+      { time: "00:19:57", title: "Vibrations — MacRonik, Sanque, Pelow Deep" },
+      { time: "00:25:42", title: "The Last Groove — Supreme H & Lakay0101" },
+      { time: "00:29:42", title: "DeeNostalgic & Dawn Deep — Time Shall Come · Sound Category1" },
+      { time: "00:35:01", title: "Friends Of House (feat. Deeptone & 8nine Muzique) — Laconic MP" },
+      { time: "00:41:05", title: "Deep Essentials & Solo Thato — Cadence (HD mix) · Strictly Deep House Music [SDHM]" },
+      { time: "00:45:47", title: "Insane (feat. Orgason & Kay 1) — V.Tone" },
+      { time: "00:51:03", title: "Half Of The Story, Pt. 2 — Bhutlish" },
+    ],
+    status: "published",
+    rightsStatus: "cleared",
+  },
   {
     id: "CR.003",
     slug: "wasembo-deep-house-playlist",

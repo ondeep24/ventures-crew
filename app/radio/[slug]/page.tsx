@@ -103,6 +103,40 @@ export default async function RadioSessionPage({ params }: RadioSessionPageProps
             hearthisUrl={session.hearthisUrl}
           />
 
+          {session.tracklist && session.tracklist.length > 0 ? (
+            <details className="group mt-10 border-y border-[var(--line)]">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 [&::-webkit-details-marker]:hidden">
+                <span>
+                  <span className="block text-[10px] font-black uppercase tracking-[0.16em] text-[var(--muted)]">
+                    Crew Radio · {session.id}
+                  </span>
+                  <span className="mt-2 block text-2xl font-black uppercase tracking-[-0.05em] md:text-3xl">
+                    Tracklist · {session.tracklist.length} selections
+                  </span>
+                </span>
+                <span aria-hidden="true" className="text-xl transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <ol className="pb-5">
+                {session.tracklist.map((track, index) => (
+                  <li
+                    key={`${track.time}-${track.title}`}
+                    className="grid grid-cols-[2.5rem_4rem_1fr] items-baseline gap-2 border-t border-[var(--line)] py-3 md:grid-cols-[3rem_5rem_1fr] md:gap-4"
+                  >
+                    <span className="text-[9px] font-black uppercase tracking-[0.12em] text-[var(--muted)]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="font-mono text-[10px] tabular-nums text-[var(--muted)] md:text-xs">
+                      {track.time}
+                    </span>
+                    <span className="editorial-copy text-base leading-snug md:text-lg">
+                      {track.title}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </details>
+          ) : null}
+
           <p className="mt-8 text-[10px] font-black uppercase tracking-[0.14em] text-[var(--muted)]">
             A Ventures Crew independent mix series · {session.year}
           </p>
