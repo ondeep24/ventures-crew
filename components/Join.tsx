@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 export function Join() {
   return (
     <section
@@ -26,11 +28,23 @@ export function Join() {
 
         <div className="mt-12 border-y-2 border-[var(--foreground)] py-4">
           <div className="flex items-center justify-between gap-4 text-[10px] font-black uppercase tracking-[0.14em]">
-            <span>Newsletter</span>
-            <span>Sign-up coming soon</span>
+            <span>Ventures Crew Updates</span>
+            <span>Occasional dispatches</span>
           </div>
-          <p className="editorial-copy mt-3 text-lg leading-relaxed md:text-xl">
-            No noise, just the good stuff. The mailing list is being prepared.
+
+          <div className="mt-6">
+            <Script
+              async
+              data-uid="3035c2dc1f"
+              src="https://ventures-crew.kit.com/3035c2dc1f/index.js"
+              strategy="afterInteractive"
+            />
+          </div>
+
+          <p className="editorial-copy mt-4 max-w-lg text-sm leading-relaxed md:text-base">
+            Notes on new releases, events and what&apos;s happening across the
+            crew. Join voluntarily; confirm your email to subscribe. Unsubscribe
+            whenever you like.
           </p>
         </div>
       </div>
