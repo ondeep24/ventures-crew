@@ -94,3 +94,94 @@ button,
 input {
   font: inherit;
 }
+
+#join .kit-signup-form {
+  width: 100%;
+  max-width: 700px;
+  background: transparent;
+  font-family: inherit;
+}
+
+#join .kit-signup-form .formkit-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  margin: 0;
+}
+
+#join .kit-signup-form .formkit-field,
+#join .kit-signup-form .formkit-submit {
+  flex: 1 0 auto;
+  width: 100%;
+  margin: 0;
+}
+
+#join .kit-signup-form .formkit-input {
+  width: 100%;
+  min-height: 3.25rem;
+  border: 1px solid var(--foreground);
+  border-radius: 0;
+  background: var(--background);
+  color: var(--foreground);
+  padding: 0.875rem 1rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+#join .kit-signup-form .formkit-input:focus {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+#join .kit-signup-form .formkit-submit {
+  min-height: 3.25rem;
+  border: 1px solid var(--foreground);
+  border-radius: 0;
+  background: var(--foreground);
+  color: var(--background);
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-transform: uppercase;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+#join .kit-signup-form .formkit-submit > span {
+  display: block;
+  padding: 1rem 1.25rem;
+  transition: background-color 180ms ease;
+}
+
+#join .kit-signup-form .formkit-submit:hover {
+  background: transparent;
+  color: var(--foreground);
+}
+
+#join .kit-signup-form .formkit-submit:hover > span {
+  background: transparent;
+}
+
+#join .kit-signup-form .formkit-alert-error:not(:empty) {
+  margin: 0 0 0.75rem;
+  border: 1px solid var(--foreground);
+  border-radius: 0;
+  background: var(--cream);
+  color: var(--foreground);
+  padding: 0.75rem 1rem;
+  list-style: none;
+}
+
+#join .kit-signup-form .formkit-powered-by-convertkit-container {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.5rem 0 0;
+}
+
+#join .kit-signup-form .formkit-powered-by-convertkit {
+  margin: 0;
+}
