@@ -127,7 +127,7 @@ export function SessionPlayer({
           }
           className="mt-5 inline-flex min-h-11 items-center gap-3 border border-[var(--foreground)] bg-transparent px-5 py-3 text-[10px] font-black uppercase tracking-[0.14em] transition-colors hover:bg-[var(--foreground)] hover:text-[var(--cream)]"
         >
-          Open persistent player <span aria-hidden="true">↗</span>
+          Start session <span aria-hidden="true">↗</span>
         </button>
       </div>
     </div>
