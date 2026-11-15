@@ -1,4 +1,4 @@
-import Script from "next/script";
+import { KitSignupEmbed } from "@/components/KitSignupEmbed";
 
 export function Join() {
   return (
@@ -33,12 +33,7 @@ export function Join() {
           </div>
 
           <div className="mt-6">
-            <Script
-              async
-              data-uid="3035c2dc1f"
-              src="https://ventures-crew.kit.com/3035c2dc1f/index.js"
-              strategy="afterInteractive"
-            />
+            <KitSignupEmbed />
           </div>
 
           <p className="editorial-copy mt-4 max-w-lg text-sm leading-relaxed md:text-base">
